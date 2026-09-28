@@ -43,4 +43,4 @@ Marcelle Andrade
 
 ## Link para visualização
 
-Adicione aqui o link do GitHub Pages depois de publicar o projeto.
+https://MarcelleAndradre.github.io/dashboard-profissional-responsivo/
