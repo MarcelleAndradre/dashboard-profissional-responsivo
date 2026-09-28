@@ -1,0 +1,425 @@
+/* ==========================================================
+   Dashboard profissional responsivo
+   Tema escuro com roxo, no mesmo estilo do portfólio pessoal
+   ========================================================== */
+
+:root {
+    color-scheme: dark;
+
+    --fundo: #08080d;
+    --painel: #101017;
+    --painel-2: #17151e;
+    --linha: rgba(255, 255, 255, 0.09);
+    --texto: #f4f1f8;
+    --suave: #a7a3b0;
+    --roxo: #a86cff;
+    --roxo-forte: #7c3aed;
+    --ouro: #e0b84c;
+    --verde: #8ef0aa;
+
+    --fonte-titulo: "Bricolage Grotesque", "Segoe UI", sans-serif;
+    --fonte-texto: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+
+    --raio: 12px;
+    --espaco: 24px;
+}
+
+/* ---------- Base ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--texto);
+    background-color: var(--fundo);
+}
+
+ul {
+    list-style: none;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--roxo);
+    outline-offset: 3px;
+}
+
+/* ---------- Cabeçalho e menu ---------- */
+
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--linha);
+    background-color: rgba(8, 8, 13, 0.92);
+    backdrop-filter: blur(8px);
+}
+
+.cabecalho__conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px var(--espaco);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px var(--espaco);
+}
+
+.marca__nome {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.marca__area {
+    font-size: 0.9rem;
+    color: var(--suave);
+}
+
+.menu__lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.menu__link {
+    display: block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    color: #bcb8c4;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.menu__link:hover {
+    background-color: var(--roxo-forte);
+    color: #ffffff;
+}
+
+/* ---------- Estrutura geral ---------- */
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--espaco);
+}
+
+.secao {
+    padding: 48px 0 8px;
+}
+
+.secao__titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.75rem;
+    margin-bottom: var(--espaco);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--linha);
+}
+
+/* Linha flexível reutilizada em Sobre, Formação, Competências e Projetos */
+.linha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ---------- Destaque e indicadores ---------- */
+
+.destaque {
+    padding-top: 56px;
+}
+
+.destaque__titulo {
+    max-width: 18em;
+    font-family: var(--fonte-titulo);
+    font-size: 2.75rem;
+    line-height: 1.1;
+}
+
+.destaque__texto {
+    max-width: 60ch;
+    margin-top: 16px;
+    font-size: 1.1rem;
+    color: var(--suave);
+}
+
+.indicadores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 36px;
+}
+
+.indicador {
+    display: flex;
+    flex: 1 1 180px;
+    flex-direction: column;
+    gap: 4px;
+    padding: 20px;
+    border: 1px solid var(--linha);
+    border-radius: var(--raio);
+    background-color: var(--painel);
+}
+
+.indicador__valor {
+    font-family: var(--fonte-titulo);
+    font-size: 1.75rem;
+    line-height: 1.1;
+    color: var(--roxo);
+}
+
+.indicador__rotulo {
+    font-size: 0.9rem;
+    color: var(--suave);
+}
+
+.indicador--principal {
+    flex: 2 1 320px;
+    justify-content: center;
+    border-color: var(--roxo);
+    background-color: var(--roxo-forte);
+    color: #ffffff;
+}
+
+.indicador--principal .indicador__valor {
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+.indicador--principal .indicador__rotulo {
+    color: #efe6ff;
+}
+
+.indicador--premio {
+    border-color: rgba(224, 184, 76, 0.35);
+}
+
+.indicador--premio .indicador__valor {
+    color: var(--ouro);
+}
+
+/* ---------- Blocos (cards) ---------- */
+
+.bloco {
+    display: flex;
+    flex: 1 1 280px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 22px;
+    border: 1px solid var(--linha);
+    border-radius: var(--raio);
+    background-color: var(--painel);
+}
+
+.bloco p {
+    color: var(--suave);
+}
+
+.bloco--largo {
+    flex: 2 1 380px;
+}
+
+.bloco--cartao {
+    flex: 1 1 220px;
+    border-top: 3px solid var(--roxo);
+}
+
+.bloco__titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    line-height: 1.25;
+}
+
+.bloco .bloco__meta {
+    font-weight: 500;
+    color: var(--roxo);
+}
+
+/* ---------- Tags e selos ---------- */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags li {
+    padding: 4px 12px;
+    border: 1px solid var(--linha);
+    border-radius: 999px;
+    background-color: var(--painel-2);
+    font-size: 0.9rem;
+    color: #d6c9e5;
+}
+
+.selo {
+    padding: 2px 10px;
+    border: 1px solid var(--linha);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--suave);
+}
+
+.selo--andamento {
+    border-color: var(--roxo);
+    color: var(--roxo);
+}
+
+.selo--ativo {
+    border-color: var(--verde);
+    color: var(--verde);
+}
+
+/* ---------- Projetos ---------- */
+
+.projeto {
+    flex-basis: 320px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.projeto:hover {
+    border-color: rgba(168, 108, 255, 0.45);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.projeto .tags {
+    margin-top: auto;
+}
+
+.projeto__link {
+    font-weight: 500;
+    color: var(--roxo);
+    text-underline-offset: 4px;
+}
+
+.projeto__link:hover {
+    color: #ffffff;
+}
+
+/* ---------- Contato ---------- */
+
+.contatos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.contatos__link {
+    display: block;
+    padding: 12px 28px;
+    border: 1px solid var(--roxo-forte);
+    border-radius: var(--raio);
+    font-weight: 500;
+    color: #d6c8e7;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.contatos__link:hover {
+    background-color: var(--roxo-forte);
+    color: #ffffff;
+}
+
+/* ---------- Rodapé ---------- */
+
+.rodape {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px var(--espaco);
+    margin-top: 64px;
+    padding: 24px max(var(--espaco), calc((100% - 1100px) / 2 + var(--espaco)));
+    border-top: 1px solid var(--linha);
+    background-color: var(--painel);
+    font-size: 0.9rem;
+    color: var(--suave);
+}
+
+.rodape__topo {
+    color: #d6c8e7;
+}
+
+/* ---------- Responsividade ---------- */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .destaque__titulo {
+        font-size: 2.25rem;
+    }
+
+    .indicador--principal .indicador__valor {
+        font-size: 2.5rem;
+    }
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+    :root {
+        --espaco: 16px;
+    }
+
+    .cabecalho {
+        position: static;
+    }
+
+    .cabecalho__conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu__lista {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu__link {
+        border-radius: var(--raio);
+    }
+
+    .destaque__titulo {
+        font-size: 1.85rem;
+    }
+
+    .secao__titulo {
+        font-size: 1.5rem;
+    }
+
+    .bloco,
+    .bloco--largo,
+    .bloco--cartao,
+    .projeto {
+        flex-basis: 100%;
+    }
+
+    .contatos__link {
+        text-align: center;
+    }
+
+    .contatos li {
+        flex: 1 1 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
